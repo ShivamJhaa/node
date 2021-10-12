@@ -12,12 +12,22 @@ setInterval(()=>{
     console.log("Hello world")
 },2000)*/
 
-const names = require('./3')
-const sayHi = require('./4')
+// const names = require('./3')
+// const sayHi = require('./4')
 
-const data = require('./6')
+// const data = require('./6')
 
-console.log(data)
+// console.log(data)
 
-sayHi('susan')
-sayHi(names.shivam) 
+// sayHi('susan')
+// sayHi(names.shivam) 
+
+const EventEmitter = require('events');
+
+const customEmitter = new EventEmitter()
+
+customEmitter.on('response',()=> {
+    console.log(`data recieved`)
+})
+
+customEmitter.emit('response')
