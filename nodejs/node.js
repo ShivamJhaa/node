@@ -62,6 +62,12 @@
 // })
 
 
-setInterval(()=>{
-    console.log("Hello World");
-},2000)
+// setInterval(()=>{
+//     console.log("Hello World");
+// },2000)
+
+const {writeFileSync} = require('fs')
+
+for (let i=0;i<100000;i++){
+    writeFileSync('./nodejs/content/big.txt',`Hello Shivam ${i}\n`,{ flag : 'a'})
+}
